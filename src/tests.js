@@ -45,6 +45,16 @@ test("edge handler can create empty edge set", function() {
 
 test("add new edge to edge set, using edge handler", function() {
     var edges = new_edge_set();
-    edges.add_new_edge(new_branch(), new_function());
+    var branch = new_branch();
+    var func = new_function();
+    edges.add_new_edge(branch, func);
     equal( edges.size(), 1 );
+});
+
+test("it is possible to retrieve edges from edge set", function() {
+    var edges = new_edge_set();
+    var branch = new_branch();
+    var func = new_function();
+    edges.add_new_edge(branch, func);
+    deepEqual( edges.get_edge(0), {id:0,from:'branch_1',to:'function_1'});
 });

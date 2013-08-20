@@ -6,6 +6,9 @@ function new_edge_set() {
 				    from:node_a.id,
 				    to:node_b.id};
 			this.set.push(edge);
+		    },
+		    get_edge:function(index) {
+			return this.set[index];
 		    }
 		   };
     return edge_set;
