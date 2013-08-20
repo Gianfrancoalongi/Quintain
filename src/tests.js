@@ -11,3 +11,12 @@ test("adding branch to empty system will put it between stdin and device", funct
 			      {id:2,from:'branch_1',to:'device_1'}
 			     ]);
 });
+
+test("adding replicator to empty system will put it between stdin and device", function() {
+    var system = new_system();
+    var replicator = new_replicator();
+    system.add_node_between(replicator);
+    deepEqual( system.edges, [{id:1,from:'stdin',to:'replicator_1'},
+			     {id:2,from:'replicator_1',to:'device_1'}
+			    ]);
+});
