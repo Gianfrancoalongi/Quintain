@@ -28,3 +28,12 @@ test("adding splitter to empty system will put it between stdin and device", fun
     deepEqual( system.edges, [{id:1,from:'stdin',to:'splitter_1'},
 			      {id:2,from:'splitter_1',to:'device_1'}]);
 });
+
+test("adding function to empty system will put it between stdin and device", function() {
+    var system = new_system();
+    var funct = new_function();
+    system.add_node_between(funct);
+    deepEqual( system.edges, [{id:1,from:'stdin',to:'function_1'},
+			      {id:2,from:'function_1',to:'device_1'}
+			     ]);
+});
