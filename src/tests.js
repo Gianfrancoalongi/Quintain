@@ -37,3 +37,8 @@ test("adding function to empty system will put it between stdin and device", fun
 			      {id:2,from:'function_1',to:'device_1'}
 			     ]);
 });
+
+test("edge handler can create empty edge set", function() {
+    var edges = new_edge_set();
+    deepEqual( edges, []);
+});
