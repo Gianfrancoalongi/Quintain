@@ -20,3 +20,11 @@ test("adding replicator to empty system will put it between stdin and device", f
 			     {id:2,from:'replicator_1',to:'device_1'}
 			    ]);
 });
+
+test("adding splitter to empty system will put it between stdin and device", function() {
+    var system = new_system();
+    var splitter = new_splitter();
+    system.add_node_between(splitter);
+    deepEqual( system.edges, [{id:1,from:'stdin',to:'splitter_1'},
+			      {id:2,from:'splitter_1',to:'device_1'}]);
+});
