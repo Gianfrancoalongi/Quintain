@@ -57,7 +57,7 @@ test("add new edge to edge set, using edge handler", function() {
     var edges = new_edge_set();
     var branch = new_branch();
     var func = new_function();
-    edges.add_new_edge(branch, func);
+    edges.add_new_edge(branch.id, func.id);
     equal( edges.size(), 1 );
 });
 
@@ -65,6 +65,6 @@ test("it is possible to retrieve edges from edge set", function() {
     var edges = new_edge_set();
     var branch = new_branch();
     var func = new_function();
-    edges.add_new_edge(branch, func);
+    edges.add_new_edge(branch.id, func.id);
     deepEqual( edges.get_edge(0), {id:0,from:'branch_1',to:'function_1'});
 });
