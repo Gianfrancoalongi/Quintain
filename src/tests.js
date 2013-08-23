@@ -1,3 +1,8 @@
+test("new device can be created", function() {
+    var dev = new_device();
+    equal(dev.id, "device_1");
+});
+
 test("new system has only input to stdout edge", function() {
     var system = new_system();
     deepEqual( system.edges, [{id:1,from:'stdin',to:'device_1'}]);
